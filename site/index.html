@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1729" />
+  <title>Price & Weight Calculator</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="calculator">
+    <h1>Price &amp; Weight<br />Calculator</h1>
+
+    <div class="tabs" role="tablist" aria-label="Calculator mode">
+      <button class="tab active" id="priceTab" type="button" role="tab" aria-selected="true">Calculate by Price</button>
+      <button class="tab" id="weightTab" type="button" role="tab" aria-selected="false">Calculate by Weight</button>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label for="pricePerKg" id="pricePerKgLabel">Price per Kilogram (৳)</label>
+        <div class="input-wrap">
+          <span class="currency-icon">৳</span>
+          <input id="pricePerKg" type="number" min="0" step="any" value="400" inputmode="decimal" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="secondValue" id="secondValueLabel">Amount you want to spend (৳)</label>
+        <div class="input-wrap">
+          <span class="currency-icon" id="secondIcon">৳</span>
+          <input id="secondValue" type="number" min="0" step="any" value="0" inputmode="decimal" />
+        </div>
+      </div>
+
+      <div class="result" id="result" aria-live="polite" hidden>
+        <span id="resultLabel"></span>
+        <strong id="resultValue"></strong>
+      </div>
+    </div>
+
+    <p class="credit">Made with <span class="heart-blink" aria-label="love">❤️</span> by Rakib</p>
+  </main>
+
+  <div class="modal-backdrop" id="modal" role="presentation" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-info" aria-hidden="true">i</div>
+      <h2 id="modalTitle">Tab Information</h2>
+      <p id="modalText"></p>
+      <div class="modal-actions">
+        <button id="gotIt" type="button">Got it!</button>
+        <button id="cancelModal" type="button">Cancel</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
